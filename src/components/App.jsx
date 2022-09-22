@@ -1,7 +1,7 @@
 export const App = () => {
   return (
     <div>
-      React homework 2
+      React homework #02.2
     </div>
   );
 };
