@@ -1,7 +1,7 @@
-export const App = () => {
+import Phonebook from 'components/Feedback/Phonebook';
+
+export default function App() {
   return (
-    <div>
-      React homework #02.2
-    </div>
+      <Phonebook />
   );
 };
