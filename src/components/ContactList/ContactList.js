@@ -1,5 +1,5 @@
 // import PropTypes from 'prop-types';
-import { ContList, ContItem, Name, Tel, Btn } from 'components/ContactList/ContactListStyled';
+import { ContList, ContItem, Name, Tel } from 'components/ContactList/ContactListStyled';
 import { useSelector } from 'react-redux';
 
 export default function ContactList() {
