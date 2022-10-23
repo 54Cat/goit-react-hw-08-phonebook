@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
-import Filter from 'components/Filter/Filter';
-import Notification from 'components/Utils/Notification';
+// import Filter from 'components/Filter/Filter';
+// import Notification from 'components/Utils/Notification';
 import { Container, Wrapper, TitleMain, TitleSecond } from 'components/Utils/UtilsStyled';
 import { useDispatch } from "react-redux";
 import { addContact } from 'store/phonebookSlice';
