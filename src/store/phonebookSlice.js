@@ -11,11 +11,9 @@ const phonebookSlice = createSlice({
             { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
         ],
     },
+    
     reducers: {
         addContact(state, action) {
-            console.log("addContact state", state.contacts);
-            console.log("addContact action", action);
-
             state.contacts.push({
                 id: nanoid(4),
                 name: action.payload.name,
@@ -23,10 +21,12 @@ const phonebookSlice = createSlice({
             });
         },
 
-        deleteContact(state, action) { },
+        deleteContact(state, action) { 
+            state.contacts= state.contacts.filter(contact => contact.id !== action.payload.id)
+        },
+        
     }
 });
 
 export const { addContact, deleteContact } = phonebookSlice.actions;
-
 export default phonebookSlice.reducer;

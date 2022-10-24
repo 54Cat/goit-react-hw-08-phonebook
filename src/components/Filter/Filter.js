@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 
 const filterInputId = nanoid(4);
 
-export default function Filter({value, onChange}) {
+export default function Filter({ onChange}) {
     return (
         <Wrapper>
             <Label htmlFor={filterInputId}>Find contact by name
@@ -13,7 +13,6 @@ export default function Filter({value, onChange}) {
                     name="findByName"
                     id={filterInputId}
                     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                    value={value}
                     onChange={onChange}
                 />
             </Label>
@@ -22,6 +21,5 @@ export default function Filter({value, onChange}) {
 }
 
 Filter.propTypes = {
-  value: PropTypes.string,
   onChange: PropTypes.func,
 };
