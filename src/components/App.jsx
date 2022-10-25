@@ -4,13 +4,13 @@ import Filter from 'components/Filter/Filter';
 import Notification from 'components/Utils/Notification';
 import { Container, Wrapper, TitleMain, TitleSecond } from 'components/Utils/UtilsStyled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'store/phonebookSlice';
-import { changeFilter } from 'store/filterSlice';
+import { addContact, getContacts } from 'redux/contactsSlice';
+import { changeFilter, getFilter } from 'redux/filterSlice';
 
 export default function App() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.phonebook.contacts);
-  const filter = useSelector(state => state.filter.filter);
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
   
   const duplicateContact = (name) => {
     const normalizedName = name.toLowerCase();

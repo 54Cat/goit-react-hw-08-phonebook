@@ -21,5 +21,5 @@ export default function Filter({ onChange}) {
 }
 
 Filter.propTypes = {
-  onChange: PropTypes.func,
+    onChange: PropTypes.func,
 };

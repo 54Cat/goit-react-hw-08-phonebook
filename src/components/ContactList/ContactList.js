@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { ContList, ContItem, Name, Tel, Btn } from 'components/ContactList/ContactListStyled';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'store/phonebookSlice';
+import { deleteContact } from 'redux/contactsSlice';
 
 export default function ContactList({contacts}) {
     const dispatch = useDispatch();
@@ -21,11 +21,11 @@ export default function ContactList({contacts}) {
 }
 
 ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      number: PropTypes.string,
-    })
-  ),
+    contacts: PropTypes.arrayOf(
+        PropTypes.exact({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            number: PropTypes.string,
+        })
+    ),
 };
