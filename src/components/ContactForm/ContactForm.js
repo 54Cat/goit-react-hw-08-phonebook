@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Form, Label, Input, Btn } from 'components/ContactForm/ContactFormStyled';
 import { nanoid } from "nanoid";
 
-export default function ContactForm({onSubmit}) {
+export default function ContactForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -26,7 +26,7 @@ export default function ContactForm({onSubmit}) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({ name, number });
+    onSubmit(name, number);
     resetForm();
   }
 
