@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import ContactForm from 'components/ContactForm/ContactForm';
-import ContactList from 'components/ContactList/ContactList';
-import Filter from 'components/Filter/Filter';
-import {NoContacts, Error} from 'components/Utils/Notification';
 import { Container, Wrapper, TitleMain, TitleSecond } from 'components/Utils/UtilsStyled';
 import { addContact } from "redux/contacts/contactsOperations";
 import { getContacts, getLoading, getError } from 'redux/contacts/contactsSelectors';
 import * as contactsOperations from 'redux/contacts/contactsOperations';
 import { changeFilter } from 'redux/filter/filterSlice';
 import { getFilter } from 'redux/filter/filterSelectors';
+import ContactForm from 'components/ContactForm/ContactForm';
+import ContactList from 'components/ContactList/ContactList';
+import Filter from 'components/Filter/Filter';
+import { NoContacts, Error } from 'components/Utils/Notification';
 import Loader from 'components/Utils/Loader';
 
 export default function App() {
@@ -18,9 +18,6 @@ export default function App() {
     const isLoading = useSelector(getLoading);
     const isError = useSelector(getError);
     const filter = useSelector(getFilter);
-
-    console.log("isLoading", isLoading);
-    console.log("isError", isError);
 
     useEffect(() => {
         dispatch(contactsOperations.fetchContact())
@@ -49,6 +46,7 @@ export default function App() {
   
     return (  
         <Container>
+
             <Wrapper>
                 <TitleMain>Phonebook</TitleMain>
                 <ContactForm onSubmit={addContacts} />

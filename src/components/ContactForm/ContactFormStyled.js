@@ -37,7 +37,7 @@ border: 2px solid #5b5b5b;
 background-color: #f5f5f5;
 
 &:hover{
-  background-color: #dfdfdf;
+  color: orangered;
 }
 `;
 
