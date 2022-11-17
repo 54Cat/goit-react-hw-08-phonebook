@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getUserName } from "redux/auth/authSelectors";
 import { logout } from "redux/auth/authOperations";
-import { Nav, Btn, Text  } from 'components/UserMenu/UserMenuStyled';
+import { Nav, Text } from 'components/UserMenu/UserMenuStyled';
+import { Btn } from 'components/ContactList/ContactListStyled';
 
 export default function UserMenu() {
     const name = useSelector(getUserName);

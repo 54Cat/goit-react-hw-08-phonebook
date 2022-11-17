@@ -1,6 +1,6 @@
 import { Container, Wrapper, TitleMain } from 'components/Utils/UtilsStyled';
 
-export default function HomeView() {
+export default function Home() {
 
     return (
         <Container>

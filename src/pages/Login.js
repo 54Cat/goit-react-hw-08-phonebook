@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { login } from "redux/auth/authOperations";
 
 
-export default function LoginView() {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();

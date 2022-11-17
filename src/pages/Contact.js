@@ -12,7 +12,7 @@ import Filter from 'components/Filter/Filter';
 import { NoContacts, Error } from 'components/Utils/Notification';
 import Loader from 'components/Utils/Loader';
 
-export default function App() {
+export default function Contact() {
     const dispatch = useDispatch();
     const contacts = useSelector(getContacts);
     const isLoading = useSelector(getLoading);

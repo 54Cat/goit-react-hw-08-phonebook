@@ -4,7 +4,7 @@ import { Container, Wrapper, TitleMain } from 'components/Utils/UtilsStyled';
 import { useDispatch } from "react-redux";
 import { register } from "redux/auth/authOperations";
 
-export default function RegisterView() {
+export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
