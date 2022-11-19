@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
+import { NavLink } from "react-router-dom";
 
-const Container = styled.div` 
+export const Container = styled.div` 
 text-align: center;
 `;
 
-const Wrapper = styled.div` 
+export const Wrapper = styled.div` 
 margin-bottom: 32px;
 
 &:last-child{
@@ -12,30 +13,40 @@ margin-bottom: 32px;
 }
 `;
 
-const TitleMain = styled.h1` 
+export const TitleMain = styled.h1` 
 display: flex;
 justify-content: center;
 padding-bottom: 12px;
-font-size: 24px;
-`;
-
-const TitleSecond = styled.h2` 
-display: flex;
-justify-content: center;
 font-size: 18px;
+`;
+
+export const TitleSecond = styled.h2` 
+display: flex;
+justify-content: center;
+font-size: 20px;
 padding-bottom: 12px;
 `;
 
-const Notif = styled.p` 
+export const Welcome = styled.p`
+  pcolor: black;
+  font-size: 20px;
+  padding-bottom: 16px;
+
+`;
+
+export const Notif = styled.p` 
 display: flex;
 justify-content: center;
 font-size: 20px;
 `;
 
-export {
-  Container,
-  Wrapper,
-  TitleMain,
-  TitleSecond,
-  Notif
+export const NavTo = styled(NavLink)`
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 4px;
+
+  &:hover{
+  color: orangered;
 }
+`;

@@ -7,7 +7,7 @@ const filterInputId = nanoid(4);
 export default function Filter({ onChange}) {
     return (
         <Wrapper>
-            <Label htmlFor={filterInputId}>Find contact by name
+            <Label htmlFor={filterInputId}>Name
                 <Input
                     type="text"
                     name="findByName"

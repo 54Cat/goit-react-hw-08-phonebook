@@ -7,11 +7,14 @@ export const Nav = styled.nav`
 
 export const NavItem = styled(NavLink)`
   padding: 8px 16px;
-  text-decoration: none;
   color: black;
   font-weight: 500;
 
   &.active {
     color: orangered;
+  }
+
+  &:hover{
+  color: orangered;
   }
 `;

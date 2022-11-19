@@ -5,8 +5,8 @@ import { Layout } from "components/Layout";
 import Home from 'pages/Home';
 import { useDispatch } from 'react-redux';
 import * as authOperations from 'redux/auth/authOperations';
-import PrivateRoute from './Navigation/PrivateRoute';
-import PublickRoute from './Navigation/PublickRoute';
+import PrivateRoute from './PrivateRoute';
+import PublickRoute from './PublickRoute';
 
 const Login = lazy(() => import("pages/Login")); 
 const Contact = lazy(() => import("pages/Contact"));

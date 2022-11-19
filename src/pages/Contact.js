@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Container, Wrapper, TitleMain, TitleSecond } from 'components/Utils/UtilsStyled';
-import { addContact } from "redux/contacts/contactsOperations";
+import { Container, Wrapper, TitleSecond } from 'components/Utils/UtilsStyled';
 import { getContacts, getLoading, getError } from 'redux/contacts/contactsSelectors';
 import * as contactsOperations from 'redux/contacts/contactsOperations';
 import { changeFilter } from 'redux/filter/filterSlice';
 import { getFilter } from 'redux/filter/filterSelectors';
-import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 import { NoContacts, Error } from 'components/Utils/Notification';
@@ -21,19 +19,7 @@ export default function Contact() {
 
     useEffect(() => {
         dispatch(contactsOperations.fetchContact())
-    }, [dispatch]);
-    
-    const duplicateContact = (name) => {
-        const normalizedName = name.toLowerCase();
-        return contacts.find(item => item.name.toLowerCase() === normalizedName);
-    }
-
-    const addContacts = ( name, number) => {
-        if (duplicateContact(name)) {
-        return alert(`"${name}" is already in your Phonebook`);
-        };
-        dispatch(addContact({ name, number }));
-    }
+    }, [dispatch]);    
 
     const onChangeFilter = (e) => {
         dispatch(changeFilter(e.currentTarget.value));
@@ -45,19 +31,14 @@ export default function Contact() {
     }
 
     return (  
-        <Container>
-
-            <Wrapper>
-                <TitleMain>Phonebook</TitleMain>
-                <ContactForm onSubmit={addContacts} />
-            </Wrapper>
+        <Container>         
 
             {isLoading && <Loader />}
             {isError ? (<Error />):
                 (contacts.length === 0
                     ? (<NoContacts />)
                     : (<Wrapper>
-                        <TitleSecond>Contacts</TitleSecond>
+                        <TitleSecond>Find contact by name</TitleSecond>
                         <Filter onChange={onChangeFilter}/>
                         <ContactList contacts={getVisibleContacts()} />
                         </Wrapper>)
