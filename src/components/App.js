@@ -5,6 +5,8 @@ import { Layout } from "components/Layout";
 import Home from 'pages/Home';
 import { useDispatch } from 'react-redux';
 import * as authOperations from 'redux/auth/authOperations';
+import PrivateRoute from './Navigation/PrivateRoute';
+import PublickRoute from './Navigation/PublickRoute';
 
 const Login = lazy(() => import("pages/Login")); 
 const Contact = lazy(() => import("pages/Contact"));
@@ -22,10 +24,17 @@ export default function App() {
         <Container>
             <Routes>
                 <Route path='/' element={<Layout />}>
-                    <Route index element={<Home/>}/>
-                    <Route path='/register' element={<Register/>}/>
-                    <Route path='/login' element={<Login/>}/>
-                    <Route path='/contacts' element={<Contact/>}/>
+                    <Route index element={<Home />} />
+                    
+                    <Route element={<PublickRoute />}>
+                        <Route path='/register' element={<Register/>}/>
+                        <Route path='/login' element={<Login/>}/>
+                    </Route>
+
+                    <Route element={<PrivateRoute />}>
+                        <Route path='/contacts' element={<Contact />} />
+                    </Route>
+                    
                 </Route>
                 <Route path="*" element={<NotFound />} />
             </Routes>

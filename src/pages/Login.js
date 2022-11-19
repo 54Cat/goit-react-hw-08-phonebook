@@ -4,7 +4,6 @@ import { Container, Wrapper, TitleMain } from 'components/Utils/UtilsStyled';
 import { useDispatch } from "react-redux";
 import { login } from "redux/auth/authOperations";
 
-
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -39,29 +38,29 @@ export default function Login() {
           <TitleMain>Login</TitleMain>
           <Form onSubmit={handleSubmit}>
 
-          <Label htmlFor={email}>
-            Email
-            <Input
-              type="email"
-              name="email"
-              id={email}
-              value={email}
-              onChange={handleInputChange}
-              required />
-          </Label>
+            <Label htmlFor={email}>
+              Email
+              <Input
+                type="email"
+                name="email"
+                id={email}
+                value={email}
+                onChange={handleInputChange}
+                required />
+            </Label>
 
-          <Label htmlFor={password}>
-            Password
-            <Input
-              type="password"
-              name="password"
-              id={password}
-              value={password}
-              onChange={handleInputChange}
-              required />
-          </Label>
+            <Label htmlFor={password}>
+              Password
+              <Input
+                type="password"
+                name="password"
+                id={password}
+                value={password}
+                onChange={handleInputChange}
+                required />
+            </Label>
 
-          <Btn type="submit">LOGIN</Btn>
+            <Btn type="submit">LOGIN</Btn>
           </Form>
         </Wrapper>
       </Container>

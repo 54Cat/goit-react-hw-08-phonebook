@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, login, logout } from './authOperations';
+import { register, login, logout, fetchCurrentUser } from './authOperations';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -52,7 +52,7 @@ const authSlice = createSlice({
     [logout.pending](state) {
       state.isLoading = true;
     },
-    [logout.fulfilled](state, action) {
+    [logout.fulfilled](state) {
       state.isLoading = false;
       state.user = { name: null, email: null, };
       state.token = null;
@@ -62,6 +62,20 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+
+
+    [fetchCurrentUser.pending](state) {
+      state.isLoadingCurrentUser = true;
+    },
+    [fetchCurrentUser.fulfilled](state, action) {
+      state.isLoadingCurrentUser = false;
+      state.user = action.payload;
+      state.isLoggedIn = true;
+    },
+    [fetchCurrentUser.rejected](state, action) {
+      state.isLoadingCurrentUser = false;
+      state.error = action.payload;
+    }
   }
 });
 

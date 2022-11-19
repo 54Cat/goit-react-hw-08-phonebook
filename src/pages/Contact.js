@@ -43,7 +43,7 @@ export default function Contact() {
         const normalizedFilter = filter.toLowerCase();
         return contacts.filter(({ name }) => name.toLowerCase().includes(normalizedFilter));
     }
-  
+
     return (  
         <Container>
 

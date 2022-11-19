@@ -12,6 +12,8 @@ export default function ContactList({contacts}) {
                     <Name>{name}:
                         <Tel>{number}</Tel>
                     </Name>
+                    {/* <Btn type="button" onClick={() => dispatch(editContact(id))}>Edit</Btn> */}
+
                     <Btn type="button" onClick={() => dispatch(deleteContact(id))}>Delete</Btn>
                 </ContItem>
             ))}
