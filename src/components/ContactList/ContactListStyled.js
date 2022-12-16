@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const ContList = styled.ul` 
+export const ContList = styled.ul` 
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -12,30 +12,41 @@ border-radius: 4px;
 border: 1px solid #5b5b5b;
 `;
 
-const ContItem = styled.li` 
+export const ContItem = styled.li` 
 display: flex;
-justify-content: space-between;
+flex-direction: column;space-between;
 align-items: center;
 width: 380px;
+padding: 8px;
 margin-bottom: 16px;
+
+background-color: #f5f5f5;
+border-radius: 8px;
 
 &:last-child{
   margin-bottom: 0;
 }
 `;
 
-const Name = styled.p` 
-font-weight: bold;
-color: #5f5f5f;
+export const BtnCont = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
 `;
 
-const Tel = styled.span` 
+export const Name = styled.p` 
+font-weight: bold;
+color: #5f5f5f;
+padding-bottom: 8px;
+`;
+
+export const Tel = styled.span` 
 padding-left: 8px;
 font-weight: normal;
 color: #000000;
 `;
 
-const Btn = styled.button` 
+export const Btn = styled.button` 
 min-width: 70px;
 padding: 4px;
 cursor: pointer;
@@ -47,11 +58,3 @@ background-color: #f5f5f5;
   background-color: #dfdfdf;
 }
 `;
-
-export {
-  ContList,
-  ContItem,
-  Name,
-  Tel,
-  Btn
-}

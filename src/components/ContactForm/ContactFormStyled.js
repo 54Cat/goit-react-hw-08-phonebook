@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const Form = styled.form` 
+export const Form = styled.form` 
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -12,7 +12,7 @@ border-radius: 4px;
 border: 1px solid #5b5b5b;
 `;
 
-const Label = styled.label` 
+export const Label = styled.label` 
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -20,7 +20,7 @@ width: 288px;
 margin-bottom: 16px;
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
 width: 200px; 
 padding: 8px;
 background-color: #f5f5f5;
@@ -28,7 +28,7 @@ border: 1px solid #afafaf;
 border-radius: 8px;
 `;
 
-const Btn = styled.button` 
+export const Btn = styled.button` 
 min-width: 100px;
 padding: 4px;
 cursor: pointer;
@@ -40,10 +40,3 @@ background-color: #f5f5f5;
   color: orangered;
 }
 `;
-
-export {
-  Form,
-  Input,
-  Label,
-  Btn
-}

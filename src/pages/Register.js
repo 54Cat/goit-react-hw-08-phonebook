@@ -31,7 +31,7 @@ export default function Register() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(register({name, email, password}));
+    dispatch(register({ name, email, password }));
     setName('');
     setEmail('');
     setPassword('');
@@ -64,7 +64,6 @@ export default function Register() {
                 onChange={handleInputChange}
                 required />
             </Label>
-            
 
             <Label htmlFor={password}>
               Password

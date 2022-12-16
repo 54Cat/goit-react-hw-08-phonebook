@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import * as authOperations from 'redux/auth/authOperations';
 import PrivateRoute from './PrivateRoute';
 import PublickRoute from './PublickRoute';
+import { ToastContainer } from 'react-toastify';
 
 const Login = lazy(() => import("pages/Login")); 
 const Contact = lazy(() => import("pages/Contact"));
@@ -38,6 +39,9 @@ export default function App() {
                 </Route>
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            <ToastContainer
+                autoClose={3000}
+            />
         </Container>
     ); 
 }
