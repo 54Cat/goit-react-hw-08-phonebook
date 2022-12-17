@@ -31,8 +31,8 @@ export default function Contact() {
     }
 
     return (  
-        <Container>         
-
+        <Container>
+            
             {isLoading && <Loader />}
             {isError ? (<Error />):
                 (contacts.length === 0
@@ -41,7 +41,7 @@ export default function Contact() {
                         <TitleSecond>Find contact by name</TitleSecond>
                         <Filter onChange={onChangeFilter}/>
                         <ContactList contacts={getVisibleContacts()} />
-                        </Wrapper>)
+                    </Wrapper>)
                 )
             }
         </Container>

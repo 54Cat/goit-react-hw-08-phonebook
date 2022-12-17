@@ -14,7 +14,6 @@ border: 1px solid #5b5b5b;
 
 export const ContItem = styled.li` 
 display: flex;
-flex-direction: column;space-between;
 align-items: center;
 width: 380px;
 padding: 8px;
@@ -26,6 +25,10 @@ border-radius: 8px;
 &:last-child{
   margin-bottom: 0;
 }
+`;
+
+export const ConteinerCont = styled.div` 
+
 `;
 
 export const BtnCont = styled.div`
