@@ -19,27 +19,25 @@ export default function ContactList({contacts}) {
                 {contacts.map(({ id, name, number }) => (
                     <ContItem key={id}>
 
-                        <IconButton aria-label="delete">
+                        <IconButton aria-label="person">
                             <Person fontSize="large" />
                         </IconButton>
 
                         <ConteinerCont>
-                            <>
-                                <Name>{name}:
-                                    <Tel>{number}</Tel>
-                                </Name>
-                            </>
+                            <Name>{name}:
+                                <Tel>{number}</Tel>
+                            </Name>
 
                             <BtnCont>
-                                <IconButton aria-label="delete">
+                                <IconButton aria-label="call">
                                     <Call />
                                 </IconButton>
 
-                                <IconButton aria-label="delete">
+                                <IconButton aria-label="chat">
                                     <Chat />
                                 </IconButton>
 
-                                <IconButton aria-label="delete" onClick={()=>setOpenModal(true)}>
+                                <IconButton aria-label="edit" onClick={()=>setOpenModal(true)}>
                                     <Edit />
                                 </IconButton>
                                 
@@ -49,10 +47,11 @@ export default function ContactList({contacts}) {
                             </BtnCont>
                         </ConteinerCont>
 
+                        <UpdateContactForm oldName={name} oldNumber={number} openModal={openModal} setOpenModal={setOpenModal} />
+            
                     </ContItem>
                 ))}
-            {/* <Button onClick={()=>setOpenModal(true)}>Open modal</Button> */}
-            <UpdateContactForm openModal={openModal} setOpenModal={setOpenModal} />
+            
             </ContList>
     );
 }

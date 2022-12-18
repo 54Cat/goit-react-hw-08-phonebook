@@ -1,4 +1,4 @@
-import { Container, Wrapper, TitleSecond } from 'components/Utils/UtilsStyled';
+import { Container, Wrapper } from 'components/Utils/UtilsStyled';
 import ContactForm from 'components/ContactForm/ContactForm';
 import { addContact } from "redux/contacts/contactsOperations";
 import { useDispatch, useSelector } from 'react-redux';
@@ -38,7 +38,6 @@ export default function AddContact() {
     return (
         <Container>
             <Wrapper>
-                <TitleSecond>Add new contact</TitleSecond>
                 <ContactForm onSubmit={addContacts} />
             </Wrapper>
        </Container>

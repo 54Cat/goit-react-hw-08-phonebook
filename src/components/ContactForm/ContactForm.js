@@ -1,15 +1,35 @@
 import { useState } from "react";
-import { Form, Label, Input, Btn } from 'components/ContactForm/ContactFormStyled';
-import { nanoid } from "nanoid";
+import { Form } from 'components/ContactForm/ContactFormStyled';
+import { TitleMain } from 'components/Utils/UtilsStyled';
+import Button from '@material-ui/core/Button';
+import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import FormControl from '@material-ui/core/FormControl';
+import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
+
+const useStyles = makeStyles(() => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  margin: {
+    margin: '8px',
+  },
+  input: {
+    width: '300px',
+  },
+  button: {
+    width: '300px',
+  },
+}));
 
 export default function ContactForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const classes = useStyles();
 
-  const nameInputId = nanoid(4);
-  const numberInputId = nanoid(4);
-
-  const handleInputChange = e => {
+  const handleChange = e => {
     switch (e.currentTarget.name) {   
       case 'name':
         setName(e.currentTarget.value);
@@ -35,33 +55,42 @@ export default function ContactForm({ onSubmit }) {
     setNumber('');
   }
 
-    return (
-      <Form onSubmit={handleSubmit}>
-        <Label htmlFor={nameInputId}>
-          Name
-          <Input
-            type="text"
-            name="name"
-            id={nameInputId}
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            value={name}
-            onChange={handleInputChange}
-            required />
-        </Label>
-        <Label htmlFor={numberInputId}>
-          Number
-          <Input
-            type="tel"
-            name="number"
-            id={numberInputId}
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            value={number}
-            onChange={handleInputChange}
-            required />
-        </Label>
-        <Btn type="submit">Add contact</Btn>
-      </Form>
-    );
-  }
+  return (      
+    <Form onSubmit={handleSubmit}>
+         
+      <TitleMain>Add new contact</TitleMain>
+          
+      <FormControl className={clsx(classes.margin)} variant="outlined">
+        <InputLabel htmlFor="name">Name</InputLabel>
+        <OutlinedInput
+          id="name"
+          name="name"
+          type='text'
+          value={name}
+          onChange={handleChange}
+          labelWidth={45}
+          className={clsx(classes.input)} 
+          required
+        />
+      </FormControl>
+
+      <FormControl className={clsx(classes.margin)} variant="outlined">
+        <InputLabel htmlFor="number">Number</InputLabel>
+        <OutlinedInput
+          id="number"
+          name="number"
+          type='tel'
+          value={number}
+          onChange={handleChange}
+          labelWidth={60}
+          className={clsx(classes.input)} 
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          required
+        />
+      </FormControl>
+
+      <Button className={clsx(classes.button, classes.margin)} type="submit" variant="outlined">Add contact</Button>
+          
+    </Form>
+  );
+}

@@ -15,7 +15,7 @@ export default function Home() {
                     <Welcome>
                         Welcome, {name}! 
                     </Welcome>
-                    <TitleSecond>See <NavTo to="/login"> my contacts </NavTo> or</TitleSecond>
+                    <TitleSecond>See <NavTo to="/login"> my contacts </NavTo></TitleSecond>
                     <AddContact/>   
 
                 </Wrapper>

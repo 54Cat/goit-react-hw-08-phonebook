@@ -75,45 +75,48 @@ export default function Login() {
          
           <TitleMain>Login</TitleMain>
           
-        <FormControl className={clsx(classes.margin)} variant="outlined">
-              <InputLabel htmlFor="email">Email</InputLabel>
-              <OutlinedInput
-                id="email"
-                name="email"
-                type={email ? 'text' : 'email'}
-                value={email}
-                onChange={handleChange}
-                labelWidth={40}
-                className={clsx(classes.input)} 
-              />
-            </FormControl>
+          <FormControl className={clsx(classes.margin)} variant="outlined">
+            <InputLabel htmlFor="email">Email</InputLabel>
+            <OutlinedInput
+            id="email"
+            name="email"
+            type='email'
+            value={email}
+            onChange={handleChange}
+            labelWidth={40}
+            className={clsx(classes.input)}
+            required
+            />
+          </FormControl>
 
-            <FormControl className={clsx(classes.margin)} variant="outlined">
-              <InputLabel htmlFor="password">Password</InputLabel>
-              <OutlinedInput
-                id="password"
-                name="password"
-                type={showPassword ? 'text' : 'password'}
-                value={password}
-                onChange={handleChange}
-                endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-                }
-                labelWidth={70}
-                className={clsx(classes.input)} 
-              />
-            </FormControl>
+          <FormControl className={clsx(classes.margin)} variant="outlined">
+            <InputLabel htmlFor="password">Password</InputLabel>
+            <OutlinedInput
+              id="password"
+              name="password"
+              type='password'
+              value={password}
+              onChange={handleChange}
+              endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              </InputAdornment>
+              }
+              labelWidth={70}
+            className={clsx(classes.input)} 
+            required
+            />
+          </FormControl>
 
-            <Button className={clsx(classes.button, classes.margin)} type="submit" variant="outlined" >LOGIN</Button>
+          <Button className={clsx(classes.button, classes.margin)} type="submit" variant="outlined">LOGIN</Button>
+          
         </Form>
         
         </Wrapper>
